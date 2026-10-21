@@ -239,5 +239,54 @@ $("sendWhatsApp").addEventListener("click",()=>{
 refreshMonthOptions();updateSimulation();
 document.getElementById("year").textContent = new Date().getFullYear();
 </script>
+   
+<style>
+.asesores-circulos {
+  position: fixed;
+  right: 12px;
+  bottom: 85px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.asesores-circulos a {
+  display: block;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid white;
+  box-shadow: 0 2px 10px #0005;
+  transition: transform .2s;
+}
+.asesores-circulos a:hover {
+  transform: scale(1.1);
+}
+.asesores-circulos img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+</style>
+
+<div class="asesores-circulos" aria-label="Contactar asesores inmobiliarios">
+  <a href="https://wa.me/51969795174?text=Hola%2C%20deseo%20informaci%C3%B3n%20sobre%20Residencial%20Monterrico" target="_blank" rel="noopener">
+    <img src="assets/Asesor%201.jpg" alt="Asesor 1">
+  </a>
+  <a href="https://wa.me/51903463353?text=Hola%2C%20deseo%20informaci%C3%B3n%20sobre%20Residencial%20Monterrico" target="_blank" rel="noopener">
+    <img src="assets/Asesor%202.jpg" alt="Asesor 2">
+  </a>
+  <a href="https://wa.me/51922591772?text=Hola%2C%20deseo%20informaci%C3%B3n%20sobre%20Residencial%20Monterrico" target="_blank" rel="noopener">
+    <img src="assets/Asesor%203.jpg" alt="Asesor 3">
+  </a>
+  <a href="https://wa.me/51906975806?text=Hola%2C%20deseo%20informaci%C3%B3n%20sobre%20Residencial%20Monterrico" target="_blank" rel="noopener">
+    <img src="assets/Asesor%204.jpg" alt="Asesor 4">
+  </a>
+  <a href="https://wa.me/51917636205?text=Hola%2C%20deseo%20informaci%C3%B3n%20sobre%20Residencial%20Monterrico" target="_blank" rel="noopener">
+    <img src="assets/Asesor%205.jpg" alt="Asesor 5">
+  </a>
+</div>
 </body>
 </html>
