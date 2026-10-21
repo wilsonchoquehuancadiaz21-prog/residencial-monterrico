@@ -41,6 +41,15 @@ footer{background:#102a19;color:#e8f0e6;padding:34px 0}.foot{display:flex;justif
 
 @media(max-width:800px){.links a:not(.btn){display:none}.hero{padding:65px 0;min-height:500px}.features{grid-template-columns:repeat(2,1fr)}.split,.plan-card{grid-template-columns:1fr}.photo-stack .small{width:82%}.gallery{grid-template-columns:repeat(2,1fr)}.cta{display:block;padding:30px}.cta .btn{margin-top:20px}}
 @media(max-width:480px){.features{grid-template-columns:1fr 1fr;gap:10px}.feature{padding:15px}.gallery{grid-template-columns:1fr}.hero h1{font-size:2.55rem}.brand img{width:48px;height:48px}.brand{font-size:.92rem}.hero-actions .btn{width:100%}.topbar .wrap{font-size:.78rem}.plan-info{padding:25px}}
+
+
+/* Accesos rápidos: solo fotos circulares, sin botones ni texto */
+.advisor-bubbles{position:fixed;right:16px;bottom:82px;z-index:50;display:flex;flex-direction:column;gap:9px;align-items:center}
+.advisor-bubble{display:block;width:54px;height:54px;border-radius:50%;overflow:hidden;border:3px solid #fff;box-shadow:0 5px 18px #0003;background:#f5f5f5;transition:transform .18s}
+.advisor-bubble:hover,.advisor-bubble:focus-visible{transform:scale(1.08);outline:2px solid var(--green,#4d941d);outline-offset:2px}
+.advisor-bubble img{display:block;width:100%;height:100%;object-fit:cover;object-position:top center}
+@media(max-width:600px){.advisor-bubbles{right:10px;bottom:72px;gap:7px}.advisor-bubble{width:45px;height:45px;border-width:2px}}
+
 </style>
 </head>
 <body>
@@ -83,6 +92,7 @@ footer{background:#102a19;color:#e8f0e6;padding:34px 0}.foot{display:flex;justif
 <a href="assets/lotes-del-proyecto.jpg" target="_blank"><img src="assets/lotes-del-proyecto.jpg" alt="Distribución visible de lotes en el terreno" loading="lazy"></a>
 <a href="assets/vista-3d-monterrico.png" target="_blank"><img src="assets/vista-3d-monterrico.png" alt="Vista conceptual 3D referencial" loading="lazy"></a>
 </div><p class="caption">La vista 3D es una representación comercial referencial. Las obras, servicios, medidas y situación legal deben confirmarse con documentación actualizada.</p></div></section>
+
 
 <section id="simulador"><div class="wrap">
 <div class="section-head"><div class="kicker">Calcula tu inversión</div><h2>Simulador de cronograma de pago</h2><p>Ingresa el precio del lote y la inicial. Compara el plazo regular con las opciones de campaña y descarga el resumen para revisarlo con tu asesor.</p></div>
@@ -201,7 +211,16 @@ function escapeHtml(str){return String(str).replace(/[&<>"']/g,c=>({"&":"&amp;",
 $("downloadExcel").addEventListener("click",()=>{
   const s=getSimulation(); if(s.error){updateSimulation();return;}
   const htmlTable=buildScheduleHtml(s);
-  const workbook=`<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:x="urn:schemas-microsoft-com:office:excel" xmlns="http://www.w3.org/TR/REC-html40"><head><meta charset="UTF-8"><style>body{font-family:Arial}table{border-collapse:collapse;margin:12px 0}td,th{border:1px solid #999;padding:8px}th{background:#dcebd0}h1{color:#b71920}.note{color:#555}</style></head><body>${htmlTable}</body></html>`;
+  const workbook=`<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:x="urn:schemas-microsoft-com:office:excel" xmlns="http://www.w3.org/TR/REC-html40"><head><meta charset="UTF-8"><style>body{font-family:Arial}table{border-collapse:collapse;margin:12px 0}td,th{border:1px solid #999;padding:8px}th{background:#dcebd0}h1{color:#b71920}.note{color:#555}</style></head><body>${htmlTable}
+<div class="advisor-bubbles" aria-label="Contactar a un asesor inmobiliario">
+<a class="advisor-bubble" href="https://wa.me/51969795174?text=Hola%2C%20deseo%20informaci%C3%B3n%20sobre%20Residencial%20Monterrico%2C%20precios%20y%20lotes%20disponibles." target="_blank" rel="noopener" title="Solicitar información con Jhonathan Carranza" aria-label="Solicitar información con Jhonathan Carranza por WhatsApp"><img src="assets/asesor-jhonathan.jpg" alt="Jhonathan Carranza" loading="lazy"></a>
+<a class="advisor-bubble" href="https://wa.me/51903463353?text=Hola%2C%20deseo%20informaci%C3%B3n%20sobre%20Residencial%20Monterrico%2C%20precios%20y%20lotes%20disponibles." target="_blank" rel="noopener" title="Solicitar información con Dariela Ninamaque" aria-label="Solicitar información con Dariela Ninamaque por WhatsApp"><img src="assets/asesora-dariela.jpg" alt="Dariela Ninamaque" loading="lazy"></a>
+<a class="advisor-bubble" href="https://wa.me/51922591772?text=Hola%2C%20deseo%20informaci%C3%B3n%20sobre%20Residencial%20Monterrico%2C%20precios%20y%20lotes%20disponibles." target="_blank" rel="noopener" title="Solicitar información con Jhanet Cubas" aria-label="Solicitar información con Jhanet Cubas por WhatsApp"><img src="assets/asesora-jhanet.jpg" alt="Jhanet Cubas" loading="lazy"></a>
+<a class="advisor-bubble" href="https://wa.me/51906975806?text=Hola%2C%20deseo%20informaci%C3%B3n%20sobre%20Residencial%20Monterrico%2C%20precios%20y%20lotes%20disponibles." target="_blank" rel="noopener" title="Solicitar información con Wilson Choquehuanca Díaz" aria-label="Solicitar información con Wilson Choquehuanca Díaz por WhatsApp"><img src="assets/asesor-wilson.jpg" alt="Wilson Choquehuanca Díaz" loading="lazy"></a>
+<a class="advisor-bubble" href="https://wa.me/51917636205?text=Hola%2C%20deseo%20informaci%C3%B3n%20sobre%20Residencial%20Monterrico%2C%20precios%20y%20lotes%20disponibles." target="_blank" rel="noopener" title="Solicitar información con Carlos Iván Choquehuanca Díaz" aria-label="Solicitar información con Carlos Iván Choquehuanca Díaz por WhatsApp"><img src="assets/asesor-carlos.jpg" alt="Carlos Iván Choquehuanca Díaz" loading="lazy"></a>
+</div>
+
+</body></html>`;
   const blob=new Blob(["\ufeff",workbook],{type:"application/vnd.ms-excel;charset=utf-8;"});
   const url=URL.createObjectURL(blob);const a=document.createElement("a");a.href=url;a.download="Cronograma_Residencial_Monterrico.xls";document.body.appendChild(a);a.click();a.remove();URL.revokeObjectURL(url);
 });
